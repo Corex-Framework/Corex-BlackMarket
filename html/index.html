@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Market</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Navbar Principal -->
+        <div class="main-container hidden">
+            <div class="header">
+                <h1><i class="fas fa-mask"></i> BLACK MARKET <span class="tag">UNDERGROUND</span></h1>
+                <div class="close-btn" onclick="closeMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+
+            <!-- Información del NPC -->
+            <div class="npc-info">
+                <div class="npc-avatar">
+                    <i class="fas fa-user-secret"></i>
+                </div>
+                <div class="npc-details">
+                    <h3 id="npc-name">Traficante</h3>
+                    <p id="npc-description">Bienvenido al mercado negro</p>
+                </div>
+                <div class="player-money">
+                    <div class="money-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span id="player-cash">$0</span>
+                    </div>
+                    <div class="money-item">
+                        <i class="fas fa-university"></i>
+                        <span id="player-bank">$0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navegación por Categorías -->
+            <div class="categories-nav">
+                <div id="categories-container"></div>
+            </div>
+
+            <!-- Contenedor Principal -->
+            <div class="main-content">
+                <!-- Panel de Productos -->
+                <div class="products-panel">
+                    <div class="products-header">
+                        <h3>Productos Disponibles</h3>
+                        <div class="view-toggle">
+                            <button class="toggle-btn active" data-view="purchase">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                            <button class="toggle-btn" data-view="exchange">
+                                <i class="fas fa-exchange-alt"></i> Intercambiar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Vista de Compra -->
+                    <div id="purchase-view" class="view-content active">
+                        <div id="products-container" class="products-grid"></div>
+                    </div>
+
+                    <!-- Vista de Intercambio -->
+                    <div id="exchange-view" class="view-content">
+                        <div id="exchanges-container" class="exchanges-grid"></div>
+                    </div>
+                </div>
+
+                <!-- Panel del Carrito -->
+                <div class="cart-panel">
+                    <div class="cart-header">
+                        <h3><i class="fas fa-shopping-bag"></i> Tu Carrito</h3>
+                        <button id="clear-cart" class="clear-btn">
+                            <i class="fas fa-trash"></i> Limpiar
+                        </button>
+                    </div>
+
+                    <div class="cart-content">
+                        <div id="cart-items" class="cart-items"></div>
+                        
+                        <div class="cart-footer">
+                            <div class="cart-total">
+                                <span>Total: </span>
+                                <span id="cart-total-amount">$0</span>
+                            </div>
+
+                            <div class="payment-methods">
+                                <h4>Método de Pago</h4>
+                                <div class="payment-options">
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="money" checked>
+                                        <span class="payment-icon"><i class="fas fa-dollar-sign"></i></span>
+                                        <span>Efectivo</span>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="bank">
+                                        <span class="payment-icon"><i class="fas fa-university"></i></span>
+                                        <span>Banco</span>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="black_money">
+                                        <span class="payment-icon"><i class="fas fa-money-bill-wave"></i></span>
+                                        <span>Dinero Sucio</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button id="purchase-btn" class="purchase-btn">
+                                <i class="fas fa-credit-card"></i> Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificaciones -->
+    <div id="notifications" class="notifications-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
